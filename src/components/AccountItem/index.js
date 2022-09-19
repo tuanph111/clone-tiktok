@@ -7,9 +7,6 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function AccountItem() {
-    setTimeout(() => {
-        console.log('AccountItem');
-    }, 0);
     return (
         <div className={cx('wrapper')}>
             <img
