@@ -1,0 +1,45 @@
+.menu-list {
+    width: 224px;
+}
+
+.menu-popper {
+    padding-bottom: 8px;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.menu-item {
+    justify-content: flex-start !important;
+    margin-left: 0px !important;
+    border-radius: 0 !important;
+    background-color: var(--white) !important;
+    color: var(--text-color) !important;
+    padding: 11px 12px !important;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03) !important;
+    }
+}
+
+.header {
+    margin-top: -8px;
+    position: relative;
+    height: 50px;
+    width: 224px;
+}
+
+.back-btn {
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
