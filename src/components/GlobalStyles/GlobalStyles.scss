@@ -38,3 +38,27 @@ a[href] {
     text-decoration: none;
     color: var(--text-color);
 }
+
+body {
+    .tippy-box {
+        position: relative;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        background-color: rgba(84, 84, 84, 0.92);
+        color: rgb(255, 255, 255);
+        padding: 4px 8px;
+    }
+
+    .tippy-arrow {
+        width: 16px;
+        height: 16px;
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-content {
+        position: relative;
+        padding: 5px 9px;
+        z-index: 1;
+    }
+}
