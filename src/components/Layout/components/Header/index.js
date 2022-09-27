@@ -1,12 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
-import { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
     faGlobe,
@@ -17,14 +13,12 @@ import {
     faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import { faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
-import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import images from '~/assets/images';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { Menu as MenuPopper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
+import Search from '../Search';
 import Button from '~/components/Button';
 import Image from '~/components/Image';
 
@@ -64,13 +58,7 @@ const MENU_ITEMS = [
 ];
 
 export default function Header() {
-    const [searchResults, setSearchResults] = useState([]);
-
     const currentUser = true;
-
-    useEffect(() => {
-        setSearchResults([]);
-    }, []);
 
     const userItems = [
         {
@@ -103,31 +91,7 @@ export default function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo} alt="Tik tok" />
                 </div>
-                <HeadlessTippy
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                    visible={searchResults.length > 0}
-                    // onClickOutside={() => setSearchResults([])}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search accounts and videos" type={'text'} />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
+                <Search />
                 <div className={cx('actions')}>
                     <Button retangle leftIcon={<FontAwesomeIcon icon={faPlus} />} to={'/upload'}>
                         Upload
